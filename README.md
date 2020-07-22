@@ -1,3 +1,3 @@
 # RetrofitDagger
 
-Android Kotlin + Retrofit + Dagger2
+Android Kotlin + Retrofit + Dagger2 Example
