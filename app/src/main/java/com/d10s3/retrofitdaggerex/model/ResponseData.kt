@@ -6,10 +6,16 @@ import okhttp3.ResponseBody
 class ResponseData {
 
     @SerializedName("responseCode")
-    private lateinit var responseCode: String
+    private val responseCode: String = ""
+        get() {
+            return field
+        }
 
     @SerializedName("responseMessage")
-    private lateinit var responseMessage: String
+    private val responseMessage: String = ""
+        get() {
+            return field
+        }
 
     private lateinit var bodyString: String
 

@@ -1,11 +1,9 @@
 package com.d10s3.retrofitdaggerex.di.modules
 
 import android.content.Context
-import com.d10s3.retrofitdaggerex.BaseApplication
 import com.d10s3.retrofitdaggerex.model.ResponseData
 import com.d10s3.retrofitdaggerex.network.interfaces.NetworkCallbackListener
 import com.google.gson.Gson
-import dagger.Provides
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -13,7 +11,6 @@ import io.reactivex.schedulers.Schedulers
 import okhttp3.ResponseBody
 import retrofit2.Response
 import javax.inject.Inject
-import kotlin.contracts.contract
 
 /**
  * api 통신 처리 클래스
@@ -46,7 +43,7 @@ class NetConnector {
     /**
      *
      */
-    public fun doRequest(responseClass: Class<ResponseData>
+    fun doRequest(responseClass: Class<ResponseData>
                          , observable: Single<Response<ResponseBody>>
                          , networkCallbackListener: NetworkCallbackListener
                          , isNeededErrorCallback: Boolean) {
@@ -82,7 +79,7 @@ class NetConnector {
     /**
      * 에러 처리 블록
      */
-    public fun onError(throwable: Throwable, networkCallbackListener: NetworkCallbackListener, isNeededErrorCallback: Boolean) {
+    fun onError(throwable: Throwable, networkCallbackListener: NetworkCallbackListener, isNeededErrorCallback: Boolean) {
         if (isNeededErrorCallback)
             networkCallbackListener.onResult(ERROR, "error", null)
 
